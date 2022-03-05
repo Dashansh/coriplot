@@ -35,9 +35,11 @@ devtools::install_github("Dashansh/coriplot")
 This is a basic example which shows you how to solve a common problem:
 Dashanh's workspace
 
-```{r example}
+```{r example1}
 library(ggplot2)
 library(tidyverse)
+library(coriplot)
+
 
 fig <- remote_work_by_ed_level %>%
   ggplot(aes(as.Date(date),
@@ -51,7 +53,8 @@ fig <- remote_work_by_ed_level %>%
        caption = "This image is not mine",
        tag = "1st") +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b %Y") + 
-  scale_y_continuous(expand = c(0, 0), limits = c(0,NA))
+  scale_y_continuous(expand = c(0, 0), limits = c(0,NA))+
+  scale_color_cori(cori_primary) 
 
 fig
 
@@ -59,7 +62,7 @@ fig
 
 abhishek's workspace
 
-```{r example}
+```{r example2}
 fig <- remote_work_by_ed_level[1:2,] %>%
   ggplot(aes(as.Date(date), pct_working_remotely, group = education_level, color = education_level)) +
   geom_line(lwd = 1.5) +
@@ -75,7 +78,7 @@ fig
 
 This is a basic example which shows you how to make curved lines:
 
-```{r example}
+```{r example3}
 library(ggplot2)
 library(tidyverse)
 
