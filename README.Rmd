@@ -46,7 +46,7 @@ fig <- remote_work_by_ed_level %>%
              group = education_level,
              color = education_level)) +
   geom_line(lwd = 1.5) +
-  xlab("") +
+  xlab("Some Time") +
   labs(title = "This should not exceet\nMore than two lines",
        subtitle = "Some random subtitle",
        caption = "This image is not mine",
@@ -56,6 +56,7 @@ fig <- remote_work_by_ed_level %>%
   theme_cori()
 
 fig
+
 ```
 
 abhishek's workspace
@@ -81,8 +82,15 @@ library(ggplot2)
 library(tidyverse)
 
 fig <- remote_work_by_ed_level[1:20,] %>%
-  ggplot(aes(as.Date(date), pct_working_remotely, group = education_level, color = education_level)) +
-  geom_smooth(method = 'loess', linetype = 1,  size = 1, lwd = 1.5, se= FALSE, formula=lm(pct_working_remotely~ poly(date, 4, raw=TRUE),)) +
+  ggplot(aes(as.Date(date),
+             pct_working_remotely,
+             group = education_level,
+             color = education_level)) +
+  geom_smooth(method = 'loess',
+              linetype = 1,
+              size = 1,
+              lwd = 1.5,
+              se= FALSE) +
   xlab("") +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
   scale_y_continuous(expand = c(0, 0)) +

@@ -54,6 +54,8 @@ theme_cori <- function(base_size = 8.5, base_family = "TT Hoves",
   ret$plot.caption = ggplot2::element_text(size = base_size * 7 / 8.5,
                                        hjust = 0)
 
+  ret$axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 20, b = 10),
+                                           hjust = 0)
 
   # margin = ggplot2::margin(t = half_line * 0.9)
 
