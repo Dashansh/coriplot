@@ -36,14 +36,16 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(ggplot2)
-
+library(tidyverse)
 
 fig <- remote_work_by_ed_level %>%
-  ggplot(aes(date, pct_working_remotely, group = education_level, color = education_level)) +
+  ggplot(aes(as.Date(date), pct_working_remotely, group = education_level, color = education_level)) +
   geom_line() +
-  xlab("")
-
-fig
-
+  xlab("") +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b %Y") +
+  scale_x_continuous(expand = c(0, 0)) + 
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_cori()
+ 
 ```
 
