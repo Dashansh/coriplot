@@ -177,3 +177,4 @@ theme_urbn_print <- function(base_size = 8.5, base_family = "Lato",
     complete = TRUE
 
   )
+}
