@@ -2,8 +2,8 @@ pandoc: 2.7.3
 pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
-  cori-theme-vignette: cori-theme-vignette.html
-last_built: 2022-03-04T23:47Z
+  coriplot: coriplot.html
+last_built: 2022-03-05T00:01Z
 urls:
   reference: https://dashansh.github.io/coriplot/reference
   article: https://dashansh.github.io/coriplot/articles
