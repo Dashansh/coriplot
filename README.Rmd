@@ -95,7 +95,6 @@ fig <- remote_work_by_ed_level[1:20,] %>%
   geom_point(size = 2)+
   ggtitle("Line Chart - Curved lines")+
   labs(subtitle = "Multiple Colors")+
-  theme_cori()#+
-  # scale_colour_manual(values = cori_primary) 
+  scale_color_cori(cori_primary) 
 fig 
 ```
