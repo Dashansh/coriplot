@@ -24,17 +24,21 @@ cori_primary <- c(
 #' @rdname urbn_palettes
 #' @export
 cori_orange <- c(
-  `Rin Orange` = "#E74F2A",
-  `Light Orange` = "#FECEB8"
+  `rin orange` = "#E74F2A",
+  `light orange` = "#FECEB8"
 )
 
 #' @rdname urbn_palettes
 #' @export
-cori_blue <- c(`Rin Blue` = "#244FBF",
-  `Light Blue` = "#B3CEF9")
+cori_blue <- c(
+  `rin blue` = "#244FBF",
+  `light blue` = "#B3CEF9"
+)
 
 #' @rdname urbn_palettes
 #' @export
-cori_purple<- c(`Rin Purple` = "#48336A",
-  `Light Purple` = "#CBBEDC")
+cori_purple<- c(
+  `Rin Purple` = "#48336A",
+  `Light Purple` = "#CBBEDC"
+)
 
