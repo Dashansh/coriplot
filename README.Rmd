@@ -38,7 +38,6 @@ Dashanh's workspace
 ```{r example}
 library(ggplot2)
 library(tidyverse)
-theme_set(theme_cori())
 
 fig <- remote_work_by_ed_level %>%
   ggplot(aes(as.Date(date),

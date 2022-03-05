@@ -59,6 +59,36 @@ theme_cori <- function(base_size = 8.5, base_family = "TT Hoves",
 
   # margin = ggplot2::margin(t = half_line * 0.9)
 
+  # legend attributes
+
+  # legend.background = ggplot2::element_blank(),
+
+  # legend.spacing = ggplot2::unit(20L, "pt"),
+  # legend.spacing.x = ggplot2::unit(4L, "pt"),
+  # legend.spacing.y = NULL,
+  #
+  # legend.key = ggplot2::element_blank(),
+  # legend.key.size = ggplot2::unit(10L, "pt"),
+  # legend.key.height = NULL,
+  # legend.key.width = NULL,
+  #
+  # legend.text = ggplot2::element_text(size = base_size * 9.5 / 8.5,
+  #                                     vjust = 0.5),
+  ret$legend.text.align = 0
+  ret$legend.title = ggplot2::element_blank()
+  # legend.title.align = NULL,
+  #
+
+  ret$legend.position = "bottom"
+  ret$legend.direction = "horizontal"
+  # legend.justification = NULL,
+  # legend.margin = ggplot2::margin(t = 6L, r = 0L, b = 6L, l = 0L, "pt"),
+  #
+  # legend.box = "horizontal",
+  # legend.box.margin = NULL,
+  # legend.box.background = NULL,
+  # legend.box.spacing = NULL,
+
   ret
 }
 
