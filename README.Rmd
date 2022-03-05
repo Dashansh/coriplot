@@ -37,9 +37,10 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(ggplot2)
 
-ggplot(data = df, aes(x = date, y = less_than_high_school)) +
+ggplot(data = time_series_sample_data, aes(x = date, y = less_than_high_school)) +
   geom_line(linetype = "dashed")+
-  geom_point()
+  geom_point() +
+  theme(panel.grid.minor = element_line(color = "red"))
 
 ```
 
