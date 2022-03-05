@@ -1,2 +1,10 @@
 ^coriplot\.Rproj$
 ^\.Rproj\.user$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^doc$
+^Meta$
+^LICENSE\.md$
+^README\.Rmd$
