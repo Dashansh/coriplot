@@ -46,7 +46,7 @@ fig <- remote_work_by_ed_level %>%
              group = education_level,
              color = education_level)) +
   geom_line(lwd = 1.5) +
-  xlab("") +
+  xlab("Some Time") +
   labs(title = "This should not exceet\nMore than two lines",
        subtitle = "Some random subtitle",
        caption = "This image is not mine",
@@ -55,6 +55,7 @@ fig <- remote_work_by_ed_level %>%
   scale_y_continuous(expand = c(0, 0), limits = c(0,NA))
 
 fig
+
 ```
 
 abhishek's workspace
@@ -76,6 +77,7 @@ fig
 This is a basic example which shows you how to make curved lines:
 
 ```{r example}
+<<<<<<< HEAD
 # library(ggplot2)
 # library(tidyverse)
 # 
@@ -91,4 +93,28 @@ This is a basic example which shows you how to make curved lines:
 #   theme_cori() +
 #   scale_colour_manual(values = cori_primary) 
 # fig 
+=======
+library(ggplot2)
+library(tidyverse)
+
+fig <- remote_work_by_ed_level[1:20,] %>%
+  ggplot(aes(as.Date(date),
+             pct_working_remotely,
+             group = education_level,
+             color = education_level)) +
+  geom_smooth(method = 'loess',
+              linetype = 1,
+              size = 1,
+              lwd = 1.5,
+              se= FALSE) +
+  xlab("") +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
+  scale_y_continuous(expand = c(0, 0)) +
+  geom_point(size = 2)+
+  ggtitle("Line Chart - Curved lines")+
+  labs(subtitle = "Multiple Colors")+
+  theme_cori()#+
+  # scale_colour_manual(values = cori_primary) 
+fig 
+>>>>>>> afff51b955ad76857e007e98e6fb492fe992970a
 ```
