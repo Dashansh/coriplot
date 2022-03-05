@@ -3,7 +3,7 @@ pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
   coriplot: coriplot.html
-last_built: 2022-03-05T20:05Z
+last_built: 2022-03-05T21:16Z
 urls:
   reference: https://dashansh.github.io/coriplot/reference
   article: https://dashansh.github.io/coriplot/articles
