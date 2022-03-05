@@ -37,10 +37,12 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(ggplot2)
 
-ggplot(data = time_series_sample_data, aes(x = date, y = less_than_high_school)) +
-  geom_line(linetype = "dashed")+
-  geom_point() +
-  theme(panel.grid.minor = element_line(color = "red"))
+ggplot(data = time_series_sample_data, aes(x = date), color = cori_blue) +
+  geom_line(aes(y = high_school_no_college))+
+  geom_line(aes(y = less_than_high_school))+
+  scale_color_manual(values=c("#CC6666", "#9999CC"))+
+  theme_cori()
+  #theme(panel.grid.minor = element_blank())
 
 ```
 
