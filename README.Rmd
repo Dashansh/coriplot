@@ -36,6 +36,11 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(coriplot)
+
+ggplot2::ggplot(data = data, ggplot2::aes(x = mpg, y = cyl)) +
+  ggplot2::geom_line(linetype = "dashed")+
+  ggplot2::geom_point()
+
 ## basic example code
 ```
 
