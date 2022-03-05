@@ -18,5 +18,7 @@ usethis::use_data(population_sample_data, overwrite = TRUE)
 # time_series_sample_data dataset ------------------------------------------------------
 
 time_series_sample_data <- readr::read_csv("data_raw/time_series_sample_data.csv")
+time_series_sample_data<- time_series_sample_data
+time_series_sample_data$date<- as.Date(time_series_sample_data$date, "%m/%d/%y")
 
 usethis::use_data(time_series_sample_data, overwrite = TRUE)

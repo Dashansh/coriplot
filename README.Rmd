@@ -35,12 +35,11 @@ devtools::install_github("Dashansh/coriplot")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(coriplot)
+library(ggplot2)
 
-ggplot2::ggplot(data = data, ggplot2::aes(x = mpg, y = cyl)) +
-  ggplot2::geom_line(linetype = "dashed")+
-  ggplot2::geom_point()
+ggplot(data = df, aes(x = date, y = less_than_high_school)) +
+  geom_line(linetype = "dashed")+
+  geom_point()
 
-## basic example code
 ```
 
