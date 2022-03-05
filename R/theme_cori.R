@@ -19,27 +19,6 @@ theme_cori <- function(base_size = 8.5, base_family = "Times New Roman",
   ret <- ggplot2::theme_minimal(base_family = "IBMPlexSans",
                                 base_size = base_size)
 
-  ret$line = ggplot2::element_line(colour = "#000000",
-                                   size = base_line_size,
-                                   linetype = 1L,
-                                   lineend = "butt")
-
-  ret$rect = ggplot2::element_rect(fill = "#FFFFFF",
-                                   colour = "#000000",
-                                   size = base_rect_size,
-                                   linetype = 1L)
-
-  ret$text = ggplot2::element_text(family = base_family,
-                                   face = "plain",
-                                   colour = "#000000",
-                                   size = base_size,
-                                   hjust = 0.5,
-                                   vjust = 0.5,
-                                   angle = 0,
-                                   lineheight = 0.9,
-                                   margin = ggplot2::margin(),
-                                   debug = FALSE)
-
   ret$panel.grid.major.x = ggplot2::element_blank()
   ret$panel.grid.minor.x = ggplot2::element_blank()
   ret$panel.grid.minor.y = ggplot2::element_blank()
@@ -50,6 +29,33 @@ theme_cori <- function(base_size = 8.5, base_family = "Times New Roman",
   ret$panel.background = ggplot2::element_blank()
 
   ret$axis.line.x = ggplot2::element_line(color = "grey", linetype = "solid")
+
+  # Plot Attributes
+
+  # plot.tag = ggplot2::element_text(size = base_size * 1.5,
+  #                                  hjust = 0L,
+  #                                  vjust = 0L,
+  #                                  face = "bold",
+  #                                  margin = ggplot2::margin(b = 10L)),
+  # plot.tag.position = "topleft",
+  #
+  ret$plot.title = ggplot2::element_text(size = 24,
+                                         hjust = 0L,
+                                         vjust = 0L,
+                                         face = "bold",
+                                         margin = ggplot2::margin(b = 10L))
+  # ret$plot.title.position = "plot"
+
+  ret$plot.subtitle = ggplot2::element_text(size = 14,
+                                        hjust = 0L,
+                                        vjust = 0L,
+                                        margin = ggplot2::margin(b = 10L))
+
+  ret$plot.caption = ggplot2::element_text(size = base_size * 7 / 8.5,
+                                       hjust = 0)
+
+
+  # margin = ggplot2::margin(t = half_line * 0.9)
 
   ret
 }
