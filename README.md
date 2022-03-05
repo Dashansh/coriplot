@@ -17,6 +17,7 @@ You can install the development version of coriplot from
 
 ``` r
 # install.packages("devtools")
+
 devtools::install_github("Dashansh/coriplot")
 ```
 

@@ -6,7 +6,7 @@
 \usage{
 theme_cori(
   base_size = 8.5,
-  base_family = "Times New Roman",
+  base_family = "TT Hoves",
   base_line_size = 0.5,
   base_rect_size = 0.5
 )

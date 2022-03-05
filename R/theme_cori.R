@@ -10,13 +10,13 @@
 #' @param base_line_size,base_rect_size base line and rectangle sizes
 #' @export
 
-theme_cori <- function(base_size = 8.5, base_family = "Times New Roman",
+theme_cori <- function(base_size = 8.5, base_family = "TT Hoves",
                              base_line_size = 0.5,
                              base_rect_size = 0.5) {
 
   half_line <- base_size / 2L
 
-  ret <- ggplot2::theme_minimal(base_family = "IBMPlexSans",
+  ret <- ggplot2::theme_minimal(base_family = "TT Hoves",
                                 base_size = base_size)
 
   ret$panel.grid.major.x = ggplot2::element_blank()
@@ -59,3 +59,40 @@ theme_cori <- function(base_size = 8.5, base_family = "Times New Roman",
 
   ret
 }
+
+#' Import Roboto Condensed font for use in charts
+#'
+#' Roboto Condensed is a trademark of Google.
+#'
+#' There is an option `hrbrthemes.loadfonts` which -- if set to `TRUE` -- will
+#' call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
+#' devices. If you are running under Windows, the package calls the same function
+#' to register non-core fonts with the Windows graphics device.
+#'
+#' @md
+#' @note This will take care of ensuring PDF/PostScript usage. The location of the
+#'   font directory is displayed after the base import is complete. It is highly
+#'   recommended that you install them on your system the same way you would any
+#'   other font you wish to use in other programs.
+#' @export
+import_cori_font <- function() {
+
+  cori_font_dir <- system.file("fonts", "tt-hoves", package="coriplot")
+
+  # suppressWarnings(suppressMessages(extrafont::font_import(rc_font_dir, prompt=FALSE)))
+  #
+  # message(
+  #   sprintf(
+  #     "You will likely need to install these fonts on your system as well.\n\nYou can find them in [%s]",
+  #     rc_font_dir)
+  # )
+
+}
+
+#' @rdname TTHoves
+#' @md
+#' @title TT Hoves font name R variable aliases
+#' @description `cori_font` == "`TT Hoves`"
+#' @format length 1 character vector
+#' @export
+cori_font <- "TT Hoves"
