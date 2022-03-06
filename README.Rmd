@@ -67,6 +67,7 @@ remote_work_by_ed_level_2021 %>%
   geom_point() +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") +
   scale_y_continuous(limits = c(NA, 0.51)) +
+  scale_y_percent() +
   labs(
     title = "Trend of working remotely throughout 2021",
     subtitle = "A single line chart example for education bachelors or higher",
