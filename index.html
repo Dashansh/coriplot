@@ -72,16 +72,125 @@
 <p>You can install the development version of coriplot from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"Dashansh/coriplot"</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<p>This is a basic example which shows you how to solve a common problem: Dashanh’s workspace</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Dashansh/coriplot" class="external-link">coriplot</a></span><span class="op">)</span>
-<span class="co">## basic example code</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span>
+<span class="co">#&gt; ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</span>
+<span class="co">#&gt; ✓ tibble  3.1.6     ✓ dplyr   1.0.8</span>
+<span class="co">#&gt; ✓ tidyr   1.2.0     ✓ stringr 1.4.0</span>
+<span class="co">#&gt; ✓ readr   2.1.2     ✓ forcats 0.5.1</span>
+<span class="co">#&gt; ✓ purrr   0.3.4</span>
+<span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; x dplyr::filter() masks stats::filter()</span>
+<span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Dashansh/coriplot" class="external-link">coriplot</a></span><span class="op">)</span>
+
+
+<span class="va">fig</span> <span class="op">&lt;-</span> <span class="va">remote_work_by_ed_level</span> <span class="op"><a href="reference/hrbrthemes-exports.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span>,
+             <span class="va">pct_working_remotely</span>,
+             group <span class="op">=</span> <span class="va">education_level</span>,
+             color <span class="op">=</span> <span class="va">education_level</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Some Time"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"This should not exceet\nMore than two lines"</span>,
+       subtitle <span class="op">=</span> <span class="st">"Some random subtitle"</span>,
+       caption <span class="op">=</span> <span class="st">"This image is not mine"</span>,
+       tag <span class="op">=</span> <span class="st">"1st"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html" class="external-link">scale_x_date</a></span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span>  <span class="st">"%b %Y"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="cn">NA</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu">scale_color_cori</span><span class="op">(</span><span class="va">cori_primary</span><span class="op">)</span> 
+
+<span class="va">fig</span></code></pre></div>
+<p><img src="reference/figures/README-example1-1.png" width="100%"></p>
+<p>abhishek’s workspace</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">fig</span> <span class="op">&lt;-</span> <span class="va">remote_work_by_ed_level</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,<span class="op">]</span> <span class="op"><a href="reference/hrbrthemes-exports.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span>, <span class="va">pct_working_remotely</span>, group <span class="op">=</span> <span class="va">education_level</span>, color <span class="op">=</span> <span class="va">education_level</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html" class="external-link">scale_x_date</a></span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span>  <span class="st">"%b"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Line Chart - straight lines"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>subtitle <span class="op">=</span> <span class="st">"Multiple Colors"</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu">scale_color_cori</span><span class="op">(</span><span class="va">cori_blue</span><span class="op">)</span> 
+<span class="va">fig</span> 
+<span class="co">#&gt; geom_path: Each group consists of only one observation. Do you need to adjust</span>
+<span class="co">#&gt; the group aesthetic?</span></code></pre></div>
+<p><img src="reference/figures/README-example2-1.png" width="100%"></p>
+<p>This is a basic example which shows you how to make curved lines:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span>
+
+<span class="va">fig</span> <span class="op">&lt;-</span> <span class="va">remote_work_by_ed_level</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,<span class="op">]</span> <span class="op"><a href="reference/hrbrthemes-exports.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span>,
+             <span class="va">pct_working_remotely</span>,
+             group <span class="op">=</span> <span class="va">education_level</span>,
+             color <span class="op">=</span> <span class="va">education_level</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">'loess'</span>,
+              linetype <span class="op">=</span> <span class="fl">1</span>,
+              size <span class="op">=</span> <span class="fl">1</span>,
+              lwd <span class="op">=</span> <span class="fl">1.5</span>,
+              se<span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html" class="external-link">scale_x_date</a></span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span>  <span class="st">"%b"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Line Chart - Curved lines"</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>subtitle <span class="op">=</span> <span class="st">"Multiple Colors"</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu">scale_color_cori</span><span class="op">(</span><span class="va">cori_primary</span><span class="op">)</span> 
+<span class="co">#&gt; Warning: Duplicated aesthetics after name standardisation: size</span>
+<span class="va">fig</span> 
+<span class="co">#&gt; `geom_smooth()` using formula 'y ~ x'</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : span too small. fewer data values than degrees of freedom.</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : pseudoinverse used at 18382</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : neighborhood radius 61.615</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : reciprocal condition number 0</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : There are other near singularities as well. 3920.6</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : span too small. fewer data values than degrees of freedom.</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : pseudoinverse used at 18382</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : neighborhood radius 61.615</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : reciprocal condition number 0</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : There are other near singularities as well. 3920.6</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : span too small. fewer data values than degrees of freedom.</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : pseudoinverse used at 18382</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : neighborhood radius 61.615</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : reciprocal condition number 0</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : There are other near singularities as well. 3920.6</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : span too small. fewer data values than degrees of freedom.</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : pseudoinverse used at 18382</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : neighborhood radius 61.615</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : reciprocal condition number 0</span>
+<span class="co">#&gt; Warning in simpleLoess(y, x, w, span, degree = degree, parametric =</span>
+<span class="co">#&gt; parametric, : There are other near singularities as well. 3920.6</span></code></pre></div>
+<p><img src="reference/figures/README-example3-1.png" width="100%"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
