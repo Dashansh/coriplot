@@ -4,7 +4,7 @@
 \alias{threshold}
 \title{Thresholding}
 \usage{
-threshold(intercept, axis = "x", label = "", shift = 0)
+threshold(gg, intercept, axis = "x", label = "", shift = 0)
 }
 \arguments{
 \item{intercept}{x or y intercept (indicated by axis) through which the vertical or horizontal threshold is made.}
@@ -13,7 +13,7 @@ threshold(intercept, axis = "x", label = "", shift = 0)
 
 \item{label}{Label to add to the graph. Defaults to an empty string}
 
-\item{shift=0}{Pass a cori color palette. Deafults to \code{cori_primary} colors}
+\item{shift}{Variable to shift the label by "shift" units above thresholding line along "y", or by "shift" units to the right of thresholding line along "x"}
 }
 \description{
 This is a description
