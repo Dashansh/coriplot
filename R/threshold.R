@@ -4,7 +4,7 @@
 #' @param intercept x or y intercept (indicated by axis) through which the vertical or horizontal threshold is made.
 #' @param axis Axis along which a threshold is to be added. Default is "x" indicating a vertical threshold
 #' @param label Label to add to the graph. Defaults to an empty string
-#' @param shift=0 Pass a cori color palette. Deafults to `cori_primary` colors
+#' @param shift Variable to shift the label by "shift" units above thresholding line along "y", or by "shift" units to the right of thresholding line along "x"
 #' @export
 threshold<-function(intercept,axis="x",label="", shift=0){
   if(axis == "x"){
