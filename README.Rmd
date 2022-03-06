@@ -42,7 +42,7 @@ library(tidyverse)
 library(coriplot)
 
 theme_set(theme_cori())
-
+data("remote_work_by_ed_level")
 fig <- remote_work_by_ed_level %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
@@ -50,13 +50,13 @@ fig <- remote_work_by_ed_level %>%
              color = education_level)) +
   geom_line(lwd = 1.5) +
   xlab("Some Time") +
+  ylab("YLabel") +
   labs(title = "This should not exceed\nMore than two lines",
        subtitle = "Some random subtitle",
-       caption = "This image is not mine",
-       tag = "1st") +
-  scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
-  scale_y_continuous(expand = c(0, 0), limits = c(0,NA))+
-  scale_color_cori(cori_primary) 
+       caption = "This image is not mine") +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b %Y") + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0,NA)) +
+  theme_cori()
 
 fig
 
@@ -77,6 +77,7 @@ fig <- remote_work_by_ed_level %>%
   scale_color_cori() 
 fig 
 ```
+
 ```{r example2}
 
 twoColDf<-time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")]

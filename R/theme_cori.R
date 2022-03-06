@@ -56,37 +56,43 @@ theme_cori <- function(base_size = 8.5, base_family = "TT Hoves",
   ret$axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 20, b = 10),
                                            hjust = 0)
 
+  ret$axis.title.y = ggplot2::element_text(vjust = 1, angle = 90)
+
   # margin = ggplot2::margin(t = half_line * 0.9)
 
   # legend attributes
 
   # legend.background = ggplot2::element_blank(),
 
-  # legend.spacing = ggplot2::unit(20L, "pt"),
+  # ret$legend.spacing = NULL
   # legend.spacing.x = ggplot2::unit(4L, "pt"),
   # legend.spacing.y = NULL,
   #
-  # legend.key = ggplot2::element_blank(),
-  # legend.key.size = ggplot2::unit(10L, "pt"),
+  # ret$legend.key = ggplot2::element_blank()
+  # ret$legend.key.size = ggplot2::unit(0L, "pt")
   # legend.key.height = NULL,
   # legend.key.width = NULL,
   #
   # legend.text = ggplot2::element_text(size = base_size * 9.5 / 8.5,
   #                                     vjust = 0.5),
-  ret$legend.text.align = 0
+  # ret$legend.text.align = 0
   ret$legend.title = ggplot2::element_blank()
-  # legend.title.align = NULL,
+  # ret$legend.title.align = 0
   #
+
+  # ret$legend.background = element_blank()
+  # ret$legend.box.background = element_rect(colour = "black")
 
   ret$legend.position = "bottom"
   ret$legend.direction = "horizontal"
-  # legend.justification = NULL,
-  # legend.margin = ggplot2::margin(t = 6L, r = 0L, b = 6L, l = 0L, "pt"),
-  #
-  # legend.box = "horizontal",
+  ret$legend.justification = c(0,0)
+  # ret$legend.margin = ggplot2::margin(6L,0L,6L,0L, "pt")
+
+  ret$legend.box = "horizontal"
+  ret$legend.box.just = "left"
   # legend.box.margin = NULL,
   # legend.box.background = NULL,
-  # legend.box.spacing = NULL,
+  # ret$legend.box.spacing = NULL
 
   ret
 }
