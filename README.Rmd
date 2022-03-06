@@ -41,7 +41,7 @@ Dashanh's workspace
 
 ```{r example1}
 library(ggplot2)
-library(tidyverse)
+library(dplyr)
 library(coriplot)
 
 theme_set(theme_cori())

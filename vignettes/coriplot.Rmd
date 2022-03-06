@@ -14,17 +14,19 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+
 abhishek's workspace
 
 ```{r example2}
 library(ggplot2)
-library(tidyverse)
+library(dplyr)
 library(coriplot)
-library(ggplot2)
-library(tidyverse)
+library(tidyr)
 
 theme_set(theme_cori())
+
 data("remote_work_by_ed_level")
+
 fig <- remote_work_by_ed_level %>%
   ggplot(aes(as.Date(date), pct_working_remotely, group = education_level, color = education_level)) +
   geom_line(lwd = 1.5) +
@@ -67,6 +69,7 @@ fig
 This is a basic example which shows you how to make curved lines:
 
 ```{r example4}
+
 fig <- remote_work_by_ed_level[1:20,] %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
@@ -108,13 +111,45 @@ shift<-0
 f<-ggplot(data=d,aes(x=a, y=c, group=b, color=b))+
   geom_line()+
   theme_cori()+
-  scale_color_cori()+
+  scale_color_cori()
+
+threshold(f,axis="y",5, label="\nthreshold",shift=0.4)
   #annotate(geom = 'text',x=4.5+shift,y=Inf, label="label", color="#26535C", vjust="top")+
   #threshold(axis="y",6, label="\nthreshold")+
   
-threshold(f,axis="y",5, label="\nthreshold",shift=0.4)
+```
 
+## New 
 
+```{r example5}
+
+data("time_series_sample_data")
+twoColDf_defaults <- time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")]
+
+set_cori_geom_defaults()
+
+colnames(twoColDf_defaults)<-c("date","urban","rural")
+
+df2col<- tidyr::pivot_longer(
+  twoColDf_defaults,
+  cols = !date,
+  names_to = "education_level",
+  values_to = "pct_working_remotely"
+)
+
+fig <- df2col %>%
+  ggplot(aes(as.Date(date), pct_working_remotely, group = education_level)) +
+  geom_line() +
+  geom_point() +
+  geom_hline(yintercept = 0.10) +
+  xlab("") +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b") +
+  ggtitle("Line Chart - straight lines") +
+  labs(subtitle = "Only 2 Columns")+
+  ylab("Percentage Working Remotely")+
+  theme_cori()
+  
+fig 
 
 
 ```

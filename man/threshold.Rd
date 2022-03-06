@@ -7,6 +7,8 @@
 threshold(gg, intercept, axis = "x", label = "", shift = 0)
 }
 \arguments{
+\item{gg}{the ggplot object to add the threshold to.}
+
 \item{intercept}{x or y intercept (indicated by axis) through which the vertical or horizontal threshold is made.}
 
 \item{axis}{Axis along which a threshold is to be added. Default is "x" indicating a vertical threshold}

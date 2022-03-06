@@ -25,4 +25,5 @@ Imports:
     extrafont,
     ggplot2,
     dplyr,
-    scales
+    scales,
+    tidyr
