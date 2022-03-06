@@ -28,12 +28,6 @@
     <loc>https://dashansh.github.io/coriplot/reference/flush_ticks.html</loc>
   </url>
   <url>
-    <loc>https://dashansh.github.io/coriplot/reference/hrbrthemes-exports.html</loc>
-  </url>
-  <url>
-    <loc>https://dashansh.github.io/coriplot/reference/hrbrthemes.html</loc>
-  </url>
-  <url>
     <loc>https://dashansh.github.io/coriplot/reference/import_cori_font.html</loc>
   </url>
   <url>
@@ -47,6 +41,9 @@
   </url>
   <url>
     <loc>https://dashansh.github.io/coriplot/reference/ipsum_pdf.html</loc>
+  </url>
+  <url>
+    <loc>https://dashansh.github.io/coriplot/reference/scale_color_cori.html</loc>
   </url>
   <url>
     <loc>https://dashansh.github.io/coriplot/reference/scale_ipsum.html</loc>
