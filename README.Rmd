@@ -12,6 +12,9 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+data(time_series_sample_data)
+data(remote_work_by_ed_level)
 ```
 
 # coriplot
@@ -78,7 +81,7 @@ fig <- remote_work_by_ed_level %>%
 fig 
 ```
 
-```{r example2}
+```{r example3}
 
 twoColDf<-time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")]
 colnames(twoColDf)<-c("date","urban","rural")
@@ -106,7 +109,7 @@ fig
 
 This is a basic example which shows you how to make curved lines:
 
-```{r example3}
+```{r example4}
 library(ggplot2)
 library(tidyverse)
 
