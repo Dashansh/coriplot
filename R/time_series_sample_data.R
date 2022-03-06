@@ -16,4 +16,5 @@
 #' @examples
 #' data(time_series_sample_data)
 #' str(time_series_sample_data)
+#'
 NULL
