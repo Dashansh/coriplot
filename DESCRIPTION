@@ -14,7 +14,6 @@ URL: https://github.com/Dashansh/coriplot,
 BugReports: https://github.com/Dashansh/coriplot/issues
 Suggests: 
     knitr,
-    rmarkdown,
     ggrepel
 VignetteBuilder: knitr
 Depends: 
@@ -26,4 +25,7 @@ Imports:
     ggplot2,
     dplyr,
     scales,
-    tidyr
+    tidyr,
+    rmarkdown,
+    png,
+    grid

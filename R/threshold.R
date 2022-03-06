@@ -12,7 +12,7 @@ threshold<-function(gg, intercept,axis="x",label="", shift=0){
   if(axis == "x"){
     cat(intercept,axis,label)
     gg <- gg +
-    ggplot2::geom_vline(xintercept = intercept)+
+      ggplot2::geom_vline(xintercept = intercept)+
       ggplot2::annotate(geom = 'text',x=intercept+shift,y=Inf, label="label", color="#26535C", vjust="top")
   } else {
     gg <- gg +

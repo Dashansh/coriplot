@@ -11,7 +11,8 @@ vignette: >
 knitr::opts_chunk$set(
   warning = FALSE,
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  out.width = "100%"
 )
 ```
 
@@ -43,7 +44,8 @@ remote_work_by_ed_level %>%
     xlab("X Axis Title") +
     ylab("Y Axis Title") +
     scale_color_cori() +
-    theme_cori() -> fig
+    theme_cori() +
+    watermark()-> fig
 
 fig
 ```
@@ -122,7 +124,7 @@ f<-ggplot(data=d,aes(x=a, y=c, group=b, color=b))+
   theme_cori()+
   scale_color_cori()
 
-threshold(f,5, axis="y", label="\nthreshold",shift=0.4)
+threshold(f,3.5, axis="x", label="\nthreshold",shift=0.15)
   #annotate(geom = 'text',x=4.5+shift,y=Inf, label="label", color="#26535C", vjust="top")+
   #threshold(axis="y",6, label="\nthreshold")+
   
