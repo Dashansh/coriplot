@@ -24,5 +24,4 @@ Imports:
     gdtools,
     extrafont,
     ggplot2,
-    dplyr,
-    qpdf
+    dplyr
