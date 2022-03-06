@@ -1,7 +1,7 @@
-#' The Urban Institute [ggplot2] theme
+#' The CORI [ggplot2] theme
 #'
 #' \code{set_cori_geom_defaults} provides a [ggplot2] theme formatted according to the
-#' Urban Institute style guide, with sensible defaults.
+#' CORI style guide, with sensible defaults.
 #'
 #' @param base_family The base font family for the theme.
 #'

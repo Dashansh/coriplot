@@ -1,7 +1,8 @@
 #' Watermark
 #' Cori color scales
 #'
-#' This is a description
+#' This adds the CORI watermark to a gg object
+#'
 #' @param alpha Pass the opacity value for the watermark between 0 - 1 (Default: 0.5)
 #' @export
 watermark<-function(alpha = 0.2){
@@ -11,6 +12,5 @@ watermark<-function(alpha = 0.2){
                              xmin=-Inf,
                              xmax=Inf,
                              ymin=-Inf,
-                             ymax=Inf)#scale_color_manual(values = unname(color))
-
+                             ymax=Inf)
 }

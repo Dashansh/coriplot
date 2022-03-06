@@ -1,7 +1,7 @@
 #' A [ggplot2] theme formatted in the CORI style
 #'
 #' \code{theme_cori} provides a [ggplot2] theme formatted according to the
-#' CORI style guide for web, with sensible defaults.
+#' CORI style guide for static plots, with sensible defaults.
 #'
 #' @import extrafont
 #' @md
@@ -88,14 +88,7 @@ theme_cori <- function(base_family = "TT Hoves",
   ret
 }
 
-#' Import Roboto Condensed font for use in charts
-#'
-#' Roboto Condensed is a trademark of Google.
-#'
-#' There is an option `hrbrthemes.loadfonts` which -- if set to `TRUE` -- will
-#' call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
-#' devices. If you are running under Windows, the package calls the same function
-#' to register non-core fonts with the Windows graphics device.
+#' Import TT Hoves font for use in charts
 #'
 #' @md
 #' @note This will take care of ensuring PDF/PostScript usage. The location of the
