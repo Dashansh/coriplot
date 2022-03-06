@@ -26,7 +26,9 @@ library(coriplot)
 library(tidyr)
 
 data("remote_work_by_ed_level")
+data("remote_work_by_ed_level_2021")
 data("time_series_sample_data")
+data("rural_urban_2021")
 
 ```
 
@@ -41,19 +43,8 @@ set_cori_geom_defaults()
 
 ```{r chart1}
 
-# Extract the 2021 data
-remote_work_by_ed_level %>%
-  subset(date > "2020-12-31" & date < "2022-01-01") %>% 
-  mutate(education_level = factor(education_level)) -> data2021
-
-data2021$education_level <- recode_factor(data2021$education_level,
-                      bachelors_or_higher = "Bachelors or higher",
-                      high_school_no_college = "High School and no College",
-                      less_than_high_school = "Less than High School",
-                      some_college_or_associates = "Some College or Associates")
-
 # For Single line chart, let's focus on Bachelors or Higher Education level
-data2021 %>%
+remote_work_by_ed_level_2021 %>%
   filter(education_level == "Bachelors or higher") %>% 
   ggplot(aes(as.Date(date),
         pct_working_remotely)) +
@@ -76,7 +67,7 @@ fig
 
 ```{r chart2}
 
-data2021 %>%
+remote_work_by_ed_level_2021 %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
              group = education_level,
@@ -102,19 +93,7 @@ In this example we will try to plot two lines for comparision with a secondary c
 
 ```{r chart3}
 
-ruralurban2021 <-
-  time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")] %>% 
-  subset(date > "2020-12-31" & date < "2022-01-01")
-
-colnames(ruralurban2021) <- c("date","urban","rural")
-
-ruralurban2021 <- tidyr::pivot_longer(
-  ruralurban2021,
-  cols = !date,
-  names_to = "education_level",
-  values_to = "pct_working_remotely")
-
-fig <- ruralurban2021 %>%
+fig <- rural_urban_2021 %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
              group = education_level,
@@ -137,7 +116,7 @@ fig
 
 ```{r chart4}
 
-data2021 %>%
+remote_work_by_ed_level_2021 %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely)) +
   geom_line() +
@@ -160,7 +139,7 @@ fig
 ```{r chart5}
 
 
-data2021 %>%
+remote_work_by_ed_level_2021 %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
              group = education_level,
@@ -184,7 +163,7 @@ fig
 
 ```{r chart6}
 
-fig <- ruralurban2021 %>%
+fig <- rural_urban_2021 %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
              group = education_level,
@@ -209,7 +188,7 @@ fig
 
 ```{r chart7}
 
-data2021 %>%
+remote_work_by_ed_level_2021 %>%
     ggplot(
       aes(as.Date(date),
           pct_working_remotely,
