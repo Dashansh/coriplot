@@ -157,7 +157,7 @@ fig
 
 ## Multi Line Charts with Thresholds
 
-```{r example5}
+```{r chart5}
 
 data2021 %>%
   ggplot(aes(as.Date(date),
@@ -165,6 +165,7 @@ data2021 %>%
              group = education_level,
              color = education_level)) +
   geom_line() +
+  geom_point() +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
   scale_y_continuous() +
   labs(title = "Trend of Education level in 2021",
@@ -172,57 +173,42 @@ data2021 %>%
   xlab("2021") +
   ylab("Percentage %") +
   theme_cori() +
-  scale_color_cori() +
-  scale_y_percent() -> fig
+  geom_threshold_annotate(as.Date("2021-05-01"), axis="x", label="\n2021-05-01", shift=0.15) +
+  scale_color_cori() -> fig
 
 fig
-
-d <- data.frame(a=c(1,2,3,4,1,2,3,4),b=c(1,1,1,1,2,2,2,2),c=c(4,6,5,7,8,3,5,6))
-d$b<-as.factor(d$b)
-
-shift<-0
-f<-ggplot(data=d,aes(x=a, y=c, group=b, color=b))+
-  geom_line()+
-  theme_cori()+
-  scale_color_cori() +
-  geom_threshold_annotate(3.5, axis="x", label="\nthreshold",shift=0.15)
-
-f
 ```
-
-
 
 ## Watermark example
 
-```{r example7}
-remote_work_by_ed_level %>%
-    ggplot(
-      aes(as.Date(date),
-          pct_working_remotely,
-          group = education_level,
-          color = education_level)) +
-    geom_line(lwd = 1.5) +
-    geom_point(size = 2) +
-    scale_x_date(date_breaks = "1 month", date_labels =  "%b") +
-    labs(
-      title = "Title of the chart goes here.\nAvoid more than two lines",
-      subtitle = "Subtitle goes here. Lorem ipsum dolor sit amet\nconsectetur adipiscing elit.",
-      caption = "Source: source goes here https://www.blah.com") +
-    xlab("X Axis Title") +
-    ylab("Y Axis Title") +
-    scale_color_cori() +
-    theme_cori() +
-    watermark()-> fig
+```{r chart6}
 
-fig
+fig <- ruralurban2021 %>%
+  ggplot(aes(as.Date(date),
+             pct_working_remotely,
+             group = education_level,
+             color = education_level)) +
+  geom_line() +
+  geom_point() +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b") +
+  scale_y_continuous(limit = c(NA, 0.16)) +
+  ggtitle("Line Chart - straight lines") +
+  labs(title = "",
+       subtitle = "Only 2 Columns")+
+  xlab("2021") +
+  ylab("Percentage Working Remotely")+
+  scale_color_cori(cori_orange) +
+  watermark() -> fig
+
+fig 
+
 ```
 
 ## Area Plot
 
-```{r example_area_plot}
+```{r chart7}
 
-
-remote_work_by_ed_level %>%
+data2021 %>%
     ggplot(
       aes(as.Date(date),
           pct_working_remotely,

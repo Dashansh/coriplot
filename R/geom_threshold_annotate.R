@@ -17,7 +17,7 @@ geom_threshold_annotate <- function(intercept,axis="x",label="", shift=0){
   } else {
     list(
       geom_hline(yintercept = intercept),
-      annotate(geom = 'text',y=intercept+shift,x=Inf, label=label, color="#06BCCB", hjust="right", size = 10.5))
+      annotate(geom = 'text',y=intercept+shift, label=label, color="#06BCCB", hjust="right", size = 10.5))
   }
 }
 
