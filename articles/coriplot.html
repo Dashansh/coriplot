@@ -124,9 +124,9 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html" class="external-link">scale_x_date</a></span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span>  <span class="st">"%b"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0.51</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>
-    title <span class="op">=</span> <span class="st">"People with Education level Bachelors or higher\nTrend of working remotely throughout 2021"</span>,
+    title <span class="op">=</span> <span class="st">"Trend of working remotely throughout 2021"</span>,
     subtitle <span class="op">=</span> <span class="st">"A single line chart example"</span>,
-    caption <span class="op">=</span> <span class="st">"Source: source goes here https://www.blah.com"</span><span class="op">)</span> <span class="op">+</span>
+    caption <span class="op">=</span> <span class="st">"Source: here https://www.placeholder.com"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"2021"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Percentage %"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="../reference/theme_cori.html">theme_cori</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">fig</span>
@@ -135,7 +135,7 @@
 <p><img src="coriplot_files/figure-html/chart1-1.png" width="700"></p>
 </div>
 <div class="section level2">
-<h2 id="multi-line-chart-example">Multi LIne Chart Example<a class="anchor" aria-label="anchor" href="#multi-line-chart-example"></a>
+<h2 id="multi-line-chart-example">Multi Line Chart Example<a class="anchor" aria-label="anchor" href="#multi-line-chart-example"></a>
 </h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
@@ -147,22 +147,29 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html" class="external-link">scale_x_date</a></span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span>  <span class="st">"%b"</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Education level\nTrend of working remotely throughout 2021"</span>,
-       subtitle <span class="op">=</span> <span class="st">"Some random subtitle"</span>,
-       caption <span class="op">=</span> <span class="st">"This image is not mine"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Some Time"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"YLabel"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="../reference/theme_cori.html">theme_cori</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Trend of Education level in 2021"</span>,
+       subtitle <span class="op">=</span> <span class="st">"A Multi Line Chart Example"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"2021"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Percentage %"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="../reference/theme_cori.html">theme_cori</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="../reference/scale_color_cori.html">scale_color_cori</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="../reference/scale_x_percent.html">scale_y_percent</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">fig</span>
 <span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
 <span class="co">#&gt; replace the existing scale.</span>
 
 <span class="va">fig</span></code></pre></div>
 <p><img src="coriplot_files/figure-html/chart2-1.png" width="700"></p>
+</div>
+<div class="section level2">
+<h2 id="two-line-chart-example">Two Line Chart Example<a class="anchor" aria-label="anchor" href="#two-line-chart-example"></a>
+</h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="va">twoColDf</span><span class="op">&lt;-</span><span class="va">time_series_sample_data</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"date"</span>,<span class="st">"less_than_high_school"</span>,<span class="st">"high_school_no_college"</span><span class="op">)</span><span class="op">]</span>
+<span class="va">twoColDf</span> <span class="op">&lt;-</span> 
+  <span class="va">time_series_sample_data</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"date"</span>,<span class="st">"less_than_high_school"</span>,<span class="st">"high_school_no_college"</span><span class="op">)</span><span class="op">]</span>
+
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">twoColDf</span><span class="op">)</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"date"</span>,<span class="st">"urban"</span>,<span class="st">"rural"</span><span class="op">)</span>
+
 <span class="va">df2col</span><span class="op">&lt;-</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html" class="external-link">pivot_longer</a></span><span class="op">(</span>
   <span class="va">twoColDf</span>,
   cols <span class="op">=</span> <span class="op">!</span><span class="va">date</span>,
@@ -175,7 +182,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html" class="external-link">scale_x_date</a></span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span>  <span class="st">"%b"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Line Chart - straight lines"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>subtitle <span class="op">=</span> <span class="st">"Only 2 Columns"</span><span class="op">)</span><span class="op">+</span>
