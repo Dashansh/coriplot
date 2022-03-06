@@ -17,7 +17,7 @@ threshold<-function(gg, intercept,axis="x",label="", shift=0){
   } else {
     gg <- gg +
       ggplot2::geom_hline(yintercept = intercept)+
-      ggplot2::geom_text(aes(x=20, label=label, y=intercept+shift), color="#26535C", text=element_text(size=11))
+      ggplot2::annotate(geom = 'text',y=intercept+shift,x=Inf, label="label", color="#26535C", hjust="right")
   }
   gg
 }

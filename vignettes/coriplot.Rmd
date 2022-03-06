@@ -95,11 +95,12 @@ fig <- remote_work_by_ed_level[1:20,] %>%
   ggtitle("Line Chart - Curved lines")+
   labs(subtitle = "Multiple Colors")+
   scale_color_cori(cori_primary) 
-flush_ticks(fig) 
+
+fig
 ```
 
 
-```{r}
+```{r example6}
 
 ggplot2::update_geom_defaults("line", list(color = "#00835D", size = 1))
 ggplot2::update_geom_defaults("vline", list(color = "#D2D6D7", size = 0.264))
@@ -121,7 +122,7 @@ f<-ggplot(data=d,aes(x=a, y=c, group=b, color=b))+
   theme_cori()+
   scale_color_cori()
 
-threshold(f,axis="y",5, label="\nthreshold",shift=0.4)
+threshold(f,5, axis="y", label="\nthreshold",shift=0.4)
   #annotate(geom = 'text',x=4.5+shift,y=Inf, label="label", color="#26535C", vjust="top")+
   #threshold(axis="y",6, label="\nthreshold")+
   

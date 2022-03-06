@@ -4,17 +4,10 @@
 \alias{theme_cori}
 \title{A \link{ggplot2} theme formatted in the CORI style}
 \usage{
-theme_cori(
-  base_size = 8.5,
-  base_family = "TT Hoves",
-  base_line_size = 0.5,
-  base_rect_size = 0.5
-)
+theme_cori(base_family = "TT Hoves", base_size = 10.5)
 }
 \arguments{
 \item{base_family, base_size}{base font family and size}
-
-\item{base_line_size, base_rect_size}{base line and rectangle sizes}
 }
 \description{
 \code{theme_cori} provides a \link{ggplot2} theme formatted according to the

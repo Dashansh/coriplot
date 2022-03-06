@@ -123,4 +123,5 @@ import_cori_font <- function() {
 #' @description `cori_font` == "`TT Hoves`"
 #' @format length 1 character vector
 #' @export
+#'
 cori_font <- "TT Hoves"
