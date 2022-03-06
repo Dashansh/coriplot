@@ -6,7 +6,7 @@
 \alias{cori_orange}
 \alias{cori_blue}
 \alias{cori_purple}
-\title{Urban Institute palettes}
+\title{CORI palettes}
 \format{
 An object of class \code{character} of length 7.
 
@@ -17,8 +17,7 @@ An object of class \code{character} of length 2.
 An object of class \code{character} of length 2.
 }
 \source{
-Urban Institute Data Visualization Style Guide
-\url{http://urbaninstitute.github.io/graphics-styleguide/}
+CORI Data Visualization Style Guide
 }
 \usage{
 cori_primary
@@ -30,8 +29,7 @@ cori_blue
 cori_purple
 }
 \description{
-Vectors with hex-color codes that correspond to the color palettes outlined in the Urban Institute Data Visualization Style Guide.
-\url{http://urbaninstitute.github.io/graphics-styleguide/}
+Vectors with hex-color codes that correspond to the color palettes outlined in the CORI Data Visualization Style Guide.
 }
-\concept{urbn palettes}
+\concept{cori palettes}
 \keyword{datasets}
