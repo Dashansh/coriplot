@@ -62,9 +62,9 @@ data2021 %>%
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") +
   scale_y_continuous(limits = c(NA, 0.51)) +
   labs(
-    title = "People with Education level Bachelors or higher\nTrend of working remotely throughout 2021",
+    title = "Trend of working remotely throughout 2021",
     subtitle = "A single line chart example",
-    caption = "Source: source goes here https://www.blah.com") +
+    caption = "Source: here https://www.placeholder.com") +
   xlab("2021") +
   ylab("Percentage %") +
   theme_cori() -> fig
@@ -72,7 +72,7 @@ data2021 %>%
 fig
 ```
 
-## Multi LIne Chart Example
+## Multi Line Chart Example
 
 ```{r chart2}
 
@@ -84,24 +84,27 @@ data2021 %>%
   geom_line() +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
   scale_y_continuous() +
-  labs(title = "Education level\nTrend of working remotely throughout 2021",
-       subtitle = "Some random subtitle",
-       caption = "This image is not mine") +
-  xlab("Some Time") +
-  ylab("YLabel") +
-  theme_cori()+
+  labs(title = "Trend of Education level in 2021",
+       subtitle = "A Multi Line Chart Example") +
+  xlab("2021") +
+  ylab("Percentage %") +
+  theme_cori() +
+  scale_color_cori() +
   scale_y_percent() -> fig
 
 fig
 
 ```
 
-
+## Two Line Chart Example
 
 ```{r example3}
 
-twoColDf<-time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")]
+twoColDf <- 
+  time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")]
+
 colnames(twoColDf)<-c("date","urban","rural")
+
 df2col<- tidyr::pivot_longer(
   twoColDf,
   cols = !date,
@@ -114,7 +117,7 @@ fig <- df2col %>%
   geom_line(lwd = 1.5) +
   xlab("") +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
-  scale_y_continuous(expand = c(0, 0)) +
+  scale_y_continuous() +
   geom_point(size = 2)+
   ggtitle("Line Chart - straight lines") +
   labs(subtitle = "Only 2 Columns")+
