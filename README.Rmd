@@ -18,7 +18,7 @@ data(remote_work_by_ed_level)
 ```
 
 # coriplot
-
+Additional Themes and Theme Components for ‘ggplot2’
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/Dashansh/coriplot/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/Dashansh/coriplot/actions/workflows/check-standard.yaml)
 <!-- badges: end -->

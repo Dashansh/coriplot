@@ -12,19 +12,31 @@ knitr::opts_chunk$set(
   warning = FALSE,
   collapse = TRUE,
   comment = "#>",
+  fig.path = "man/figures/README-",
   out.width = "100%"
 )
 ```
 
-abhishek's workspace
-
-```{r example2}
+This loads the required libraries and sets defaults
+```{r imports}
 library(ggplot2)
 library(dplyr)
 library(coriplot)
 library(tidyr)
+```
 
+
+This applied the theme designed specifically for CORI and sets the defaults
+```{r set_theme}
 theme_set(theme_cori())
+
+```
+
+
+abhishek's workspace
+
+```{r example2}
+
 
 data("remote_work_by_ed_level")
 
@@ -44,8 +56,7 @@ remote_work_by_ed_level %>%
     xlab("X Axis Title") +
     ylab("Y Axis Title") +
     scale_color_cori() +
-    theme_cori() +
-    watermark()-> fig
+    theme_cori() -> fig
 
 fig
 ```
@@ -102,7 +113,7 @@ fig
 ```
 
 
-```{r example6}
+```{r example5}
 
 ggplot2::update_geom_defaults("line", list(color = "#00835D", size = 1))
 ggplot2::update_geom_defaults("vline", list(color = "#D2D6D7", size = 0.264))
@@ -132,7 +143,7 @@ threshold(f,3.5, axis="x", label="\nthreshold",shift=0.15)
 
 ## New 
 
-```{r example5}
+```{r example6}
 
 data("time_series_sample_data")
 twoColDf_defaults <- time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")]
@@ -163,4 +174,27 @@ fig <- df2col %>%
 fig 
 
 
+```
+
+```{r example7}
+remote_work_by_ed_level %>%
+    ggplot(
+      aes(as.Date(date),
+          pct_working_remotely,
+          group = education_level,
+          color = education_level)) +
+    geom_line(lwd = 1.5) +
+    geom_point(size = 2) +
+    scale_x_date(date_breaks = "1 month", date_labels =  "%b") +
+    labs(
+      title = "Title of the chart goes here.\nAvoid more than two lines",
+      subtitle = "Subtitle goes here. Lorem ipsum dolor sit amet\nconsectetur adipiscing elit.",
+      caption = "Source: source goes here https://www.blah.com") +
+    xlab("X Axis Title") +
+    ylab("Y Axis Title") +
+    scale_color_cori() +
+    theme_cori() +
+    watermark()-> fig
+
+fig
 ```
