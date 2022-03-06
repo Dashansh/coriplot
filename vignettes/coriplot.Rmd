@@ -162,9 +162,10 @@ shift<-0
 f<-ggplot(data=d,aes(x=a, y=c, group=b, color=b))+
   geom_line()+
   theme_cori()+
-  scale_color_cori()
+  scale_color_cori() +
+  geom_threshold_annotate(3.5, axis="x", label="\nthreshold",shift=0.15)
 
-threshold(f,3.5, axis="x", label="\nthreshold",shift=0.15)
+f
 ```
 
 ## New 
