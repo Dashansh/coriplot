@@ -109,7 +109,7 @@ ruralurban2021 <-
 colnames(ruralurban2021) <- c("date","urban","rural")
 
 ruralurban2021 <- tidyr::pivot_longer(
-  twoColDf,
+  ruralurban2021,
   cols = !date,
   names_to = "education_level",
   values_to = "pct_working_remotely")
@@ -155,35 +155,27 @@ fig
 
 ```
 
-## Low priority curve plots .
+## Multi Line Charts with Thresholds
 
-This is a basic example which shows you how to make curved lines:
+```{r example5}
 
-```{r example4}
-
-fig <- remote_work_by_ed_level[1:20,] %>%
+data2021 %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
              group = education_level,
              color = education_level)) +
-  geom_smooth(method = 'loess',
-              linetype = 1,
-              size = 1,
-              lwd = 1.5,
-              se= FALSE) +
-  xlab("") +
+  geom_line() +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
-  scale_y_continuous(expand = c(0, 0)) +
-  geom_point(size = 2)+
-  ggtitle("Line Chart - Curved lines")+
-  labs(subtitle = "Multiple Colors")+
-  scale_color_cori(cori_primary) 
+  scale_y_continuous() +
+  labs(title = "Trend of Education level in 2021",
+       subtitle = "A Multi Line Chart Example") +
+  xlab("2021") +
+  ylab("Percentage %") +
+  theme_cori() +
+  scale_color_cori() +
+  scale_y_percent() -> fig
 
 fig
-```
-
-
-```{r example5}
 
 d <- data.frame(a=c(1,2,3,4,1,2,3,4),b=c(1,1,1,1,2,2,2,2),c=c(4,6,5,7,8,3,5,6))
 d$b<-as.factor(d$b)
@@ -198,40 +190,9 @@ f<-ggplot(data=d,aes(x=a, y=c, group=b, color=b))+
 f
 ```
 
-## New 
-
-```{r example6}
 
 
-twoColDf_defaults <- time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")]
-
-set_cori_geom_defaults()
-
-colnames(twoColDf_defaults)<-c("date","urban","rural")
-
-df2col<- tidyr::pivot_longer(
-  twoColDf_defaults,
-  cols = !date,
-  names_to = "education_level",
-  values_to = "pct_working_remotely"
-)
-
-fig <- df2col %>%
-  ggplot(aes(as.Date(date), pct_working_remotely, group = education_level)) +
-  geom_line() +
-  geom_point() +
-  geom_hline(yintercept = 0.10) +
-  xlab("") +
-  scale_x_date(date_breaks = "1 month", date_labels =  "%b") +
-  ggtitle("Line Chart - straight lines") +
-  labs(subtitle = "Only 2 Columns")+
-  ylab("Percentage Working Remotely")+
-  theme_cori()
-  
-fig 
-
-
-```
+## Watermark example
 
 ```{r example7}
 remote_work_by_ed_level %>%
@@ -255,6 +216,8 @@ remote_work_by_ed_level %>%
 
 fig
 ```
+
+## Area Plot
 
 ```{r example_area_plot}
 
