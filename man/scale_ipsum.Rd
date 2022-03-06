@@ -32,8 +32,7 @@ omitted.}
 \item \code{waiver()} for the default breaks (the scale limits)
 \item A character vector of breaks
 \item A function that takes the limits as input and returns breaks
-as output. Also accepts rlang \link[rlang:as_function]{lambda} function
-notation.
+as output
 }}
     \item{\code{labels}}{One of:
 \itemize{
@@ -42,8 +41,7 @@ notation.
 transformation object
 \item A character vector giving labels (must be same length as \code{breaks})
 \item A function that takes the breaks as input and returns labels
-as output. Also accepts rlang \link[rlang:as_function]{lambda} function
-notation.
+as output
 }}
     \item{\code{limits}}{One of:
 \itemize{
@@ -51,8 +49,7 @@ notation.
 \item A character vector that defines possible values of the scale and their
 order
 \item A function that accepts the existing (automatic) values and returns
-new ones. Also accepts rlang \link[rlang:as_function]{lambda} function
-notation.
+new ones
 }}
     \item{\code{na.translate}}{Unlike continuous scales, discrete scales can easily show
 missing values, and do so by default. If you want to remove missing values
