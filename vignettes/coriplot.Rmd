@@ -11,8 +11,7 @@ vignette: >
 knitr::opts_chunk$set(
   warning = FALSE,
   collapse = TRUE,
-  comment = "#>",
-  out.width = "100%"
+  comment = "#>"
 )
 ```
 
@@ -85,7 +84,7 @@ data2021 %>%
   geom_line() +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
   scale_y_continuous() +
-  labs(title = "This should not exceed\nMore than two lines",
+  labs(title = "Education level\nTrend of working remotely throughout 2021",
        subtitle = "Some random subtitle",
        caption = "This image is not mine") +
   xlab("Some Time") +
