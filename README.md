@@ -38,6 +38,7 @@ library(tidyverse)
 #> x dplyr::lag()    masks stats::lag()
 library(coriplot)
 
+theme_set(theme_cori())
 
 fig <- remote_work_by_ed_level %>%
   ggplot(aes(as.Date(date),
@@ -46,11 +47,11 @@ fig <- remote_work_by_ed_level %>%
              color = education_level)) +
   geom_line(lwd = 1.5) +
   xlab("Some Time") +
-  labs(title = "This should not exceet\nMore than two lines",
+  labs(title = "This should not exceed\nMore than two lines",
        subtitle = "Some random subtitle",
        caption = "This image is not mine",
        tag = "1st") +
-  scale_x_date(date_breaks = "1 month", date_labels =  "%b %Y") + 
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0,NA))+
   scale_color_cori(cori_primary) 
 
@@ -62,19 +63,17 @@ fig
 abhishek’s workspace
 
 ``` r
-fig <- remote_work_by_ed_level[1:2,] %>%
+fig <- remote_work_by_ed_level %>%
   ggplot(aes(as.Date(date), pct_working_remotely, group = education_level, color = education_level)) +
   geom_line(lwd = 1.5) +
   xlab("") +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
-  scale_y_continuous(expand = c(0, 1)) +
+  scale_y_continuous(expand = c(0, 0)) +
   geom_point(size = 2)+
   ggtitle("Line Chart - straight lines") +
   labs(subtitle = "Multiple Colors")+
-  scale_color_cori(cori_blue) 
+  scale_color_cori() 
 fig 
-#> geom_path: Each group consists of only one observation. Do you need to adjust
-#> the group aesthetic?
 ```
 
 <img src="man/figures/README-example2-1.png" width="100%" />
