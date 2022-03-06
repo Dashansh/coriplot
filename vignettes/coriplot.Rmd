@@ -159,6 +159,7 @@ fig
 
 ```{r chart5}
 
+
 data2021 %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
