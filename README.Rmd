@@ -23,7 +23,11 @@ data(remote_work_by_ed_level)
 [![R-CMD-check](https://github.com/Dashansh/coriplot/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/Dashansh/coriplot/actions/workflows/check-standard.yaml)
 <!-- badges: end -->
 
-The goal of coriplot is to ...
+## Overview
+
+`coriplot` is a dedicated visualization toolkit designed specifically for the [Center On Rural Innovation](https://ruralinnovation.us/). The package extends ggplot2 with customized themes is accordance to the CORI Branding Guidelines as well as a set of utilities tools to make the overall usage more intuitive and seamless.
+
+A comprehensive set of examples is available in the get started section of this website.
 
 ## Installation
 
