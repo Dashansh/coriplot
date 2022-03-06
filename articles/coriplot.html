@@ -156,10 +156,8 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Line Chart - Curved lines"</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>subtitle <span class="op">=</span> <span class="st">"Multiple Colors"</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="../reference/scale_color_cori.html">scale_color_cori</a></span><span class="op">(</span><span class="va">cori_primary</span><span class="op">)</span> 
-<span class="fu"><a href="../reference/flush_ticks.html">flush_ticks</a></span><span class="op">(</span><span class="va">fig</span><span class="op">)</span> 
-<span class="co">#&gt; `geom_smooth()` using formula 'y ~ x'</span>
-<span class="co">#&gt; theme(axis.text.x=element_text(hjust=c(0, rep(0.5, 3), 1))) +</span>
-<span class="co">#&gt; theme(axis.text.y=element_text(vjust=c(0, rep(0.5, 4), 1)))</span>
+
+<span class="va">fig</span>
 <span class="co">#&gt; `geom_smooth()` using formula 'y ~ x'</span></code></pre></div>
 <p><img src="coriplot_files/figure-html/example4-1.png" width="700"></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
@@ -184,8 +182,8 @@
   <span class="fu"><a href="../reference/theme_cori.html">theme_cori</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="../reference/scale_color_cori.html">scale_color_cori</a></span><span class="op">(</span><span class="op">)</span>
 
-<span class="fu"><a href="../reference/threshold.html">threshold</a></span><span class="op">(</span><span class="va">f</span>,axis<span class="op">=</span><span class="st">"y"</span>,<span class="fl">5</span>, label<span class="op">=</span><span class="st">"\nthreshold"</span>,shift<span class="op">=</span><span class="fl">0.4</span><span class="op">)</span></code></pre></div>
-<p><img src="coriplot_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<span class="fu"><a href="../reference/threshold.html">threshold</a></span><span class="op">(</span><span class="va">f</span>,<span class="fl">5</span>, axis<span class="op">=</span><span class="st">"y"</span>, label<span class="op">=</span><span class="st">"\nthreshold"</span>,shift<span class="op">=</span><span class="fl">0.4</span><span class="op">)</span></code></pre></div>
+<p><img src="coriplot_files/figure-html/example6-1.png" width="700"></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R">  <span class="co">#annotate(geom = 'text',x=4.5+shift,y=Inf, label="label", color="#26535C", vjust="top")+</span>
   <span class="co">#threshold(axis="y",6, label="\nthreshold")+</span>
