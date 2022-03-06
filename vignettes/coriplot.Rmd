@@ -12,7 +12,6 @@ knitr::opts_chunk$set(
   warning = FALSE,
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
   out.width = "100%"
 )
 ```
@@ -46,16 +45,16 @@ set_cori_geom_defaults()
 # Extract the 2021 data
 remote_work_by_ed_level %>%
   subset(date > "2020-12-31" & date < "2022-01-01") %>% 
-  mutate(education_level = factor(education_level)) -> temp
+  mutate(education_level = factor(education_level)) -> data2021
 
-temp$education_level <- recode_factor(temp$education_level,
+data2021$education_level <- recode_factor(data2021$education_level,
                       bachelors_or_higher = "Bachelors or higher",
                       high_school_no_college = "High School and no College",
                       less_than_high_school = "Less than High School",
                       some_college_or_associates = "Some College or Associates")
 
 # For Single line chart, let's focus on Bachelors or Higher Education level
-temp %>%
+data2021 %>%
   filter(education_level == "Bachelors or higher") %>% 
   ggplot(aes(as.Date(date),
         pct_working_remotely)) +
@@ -65,33 +64,34 @@ temp %>%
   scale_y_continuous(limits = c(NA, 0.51)) +
   labs(
     title = "People with Education level Bachelors or higher\nTrend of working remotely throughout 2021",
-    subtitle = "Subtitle goes here. Lorem ipsum dolor sit amet\nconsectetur adipiscing elit.",
+    subtitle = "A single line chart example",
     caption = "Source: source goes here https://www.blah.com") +
   xlab("2021") +
   ylab("Percentage %") +
-  scale_color_cori() +
-  theme_cori()
+  theme_cori() -> fig
+
+fig
 ```
 
-## Example 1
+## Multi LIne Chart Example
 
-```{r example1}
+```{r chart2}
 
-fig <- remote_work_by_ed_level %>%
+data2021 %>%
   ggplot(aes(as.Date(date),
              pct_working_remotely,
              group = education_level,
              color = education_level)) +
-  geom_line(lwd = 1.5) +
-  xlab("Some Time") +
-  ylab("YLabel") +
+  geom_line() +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
+  scale_y_continuous() +
   labs(title = "This should not exceed\nMore than two lines",
        subtitle = "Some random subtitle",
        caption = "This image is not mine") +
-  scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
-  scale_y_continuous(expand = c(0, 0), limits = c(0,NA)) +
+  xlab("Some Time") +
+  ylab("YLabel") +
   theme_cori()+
-  scale_y_percent()
+  scale_y_percent() -> fig
 
 fig
 
