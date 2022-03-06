@@ -25,6 +25,9 @@
     <loc>https://dashansh.github.io/coriplot/reference/cori_network_communities.html</loc>
   </url>
   <url>
+    <loc>https://dashansh.github.io/coriplot/reference/cori_palettes.html</loc>
+  </url>
+  <url>
     <loc>https://dashansh.github.io/coriplot/reference/import_cori_font.html</loc>
   </url>
   <url>
@@ -40,6 +43,9 @@
     <loc>https://dashansh.github.io/coriplot/reference/scale_color_cori.html</loc>
   </url>
   <url>
+    <loc>https://dashansh.github.io/coriplot/reference/scale_fill_cori.html</loc>
+  </url>
+  <url>
     <loc>https://dashansh.github.io/coriplot/reference/scale_x_percent.html</loc>
   </url>
   <url>
@@ -53,9 +59,6 @@
   </url>
   <url>
     <loc>https://dashansh.github.io/coriplot/reference/time_series_sample_data.html</loc>
-  </url>
-  <url>
-    <loc>https://dashansh.github.io/coriplot/reference/urbn_palettes.html</loc>
   </url>
   <url>
     <loc>https://dashansh.github.io/coriplot/reference/watermark.html</loc>
