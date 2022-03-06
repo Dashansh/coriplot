@@ -59,9 +59,9 @@ fig <- remote_work_by_ed_level %>%
        caption = "This image is not mine") +
   scale_x_date(date_breaks = "1 month", date_labels =  "%b") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0,NA)) +
-  theme_cori()
+  theme_cori()+
+  scale_y_percent()
 
 fig
 
 ```
-
