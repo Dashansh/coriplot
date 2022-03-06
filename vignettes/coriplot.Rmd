@@ -17,6 +17,10 @@ knitr::opts_chunk$set(
 abhishek's workspace
 
 ```{r example2}
+library(ggplot2)
+library(tidyverse)
+library(coriplot)
+data("remote_work_by_ed_level")
 fig <- remote_work_by_ed_level %>%
   ggplot(aes(as.Date(date), pct_working_remotely, group = education_level, color = education_level)) +
   geom_line(lwd = 1.5) +
@@ -31,7 +35,7 @@ fig
 ```
 
 ```{r example3}
-
+data("time_series_sample_data")
 twoColDf<-time_series_sample_data[,c("date","less_than_high_school","high_school_no_college")]
 colnames(twoColDf)<-c("date","urban","rural")
 df2col<- tidyr::pivot_longer(
@@ -80,4 +84,34 @@ fig <- remote_work_by_ed_level[1:20,] %>%
   labs(subtitle = "Multiple Colors")+
   scale_color_cori(cori_primary) 
 fig 
+```
+
+
+```{r}
+
+# ggplot2::update_geom_defaults("line", list(color = "#00835D", size = 1))
+# ggplot2::update_geom_defaults("vline", list(color = "#D2D6D7", size = 0.264))
+# ggplot2::update_geom_defaults("hline", list(color = "#D2D6D7", size = 0.264))
+# 
+# d <- data.frame(a=c(1,2,3,4,1,2,3,4),b=c(1,1,1,1,2,2,2,2),c=c(4,6,5,7,8,3,5,6))
+# d$b<-as.factor(d$b)
+# 
+# # ggplot(data=d,aes(x=a, y=c, group=b, color=b))+
+# #   geom_vline(xintercept = mean(d$a))+
+# #   geom_text(aes(x=mean(a), label="\nthreshold", y=20), color="#26535C", text=element_text(size=11))+
+# #   geom_line()+
+# #   theme_cori()+
+# #   scale_color_cori()
+# shift<-0
+# ggplot(data=d,aes(x=a, y=c, group=b, color=b))+
+#   threshold(axis="x",4.5, label="\nthreshold")+
+#   geom_line()+
+#   # theme_cori()+
+#   # scale_color_cori()+   
+#   annotate(geom = 'text',x=4.5+shift,y=Inf, label="label", color="#26535C", vjust="top")+
+#   threshold(axis="y",6, label="\nthreshold")+
+#   annotate(geom = 'text',x=Inf,y=6, label="label", color="#26535C", hjust="right")
+#  
+
+
 ```

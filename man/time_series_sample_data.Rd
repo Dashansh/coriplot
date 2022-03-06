@@ -17,5 +17,6 @@ percentage of remotely working individuals across 4 categories
 \examples{
 data(time_series_sample_data)
 str(time_series_sample_data)
+
 }
 \keyword{time_series_sample_data}
