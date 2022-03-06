@@ -1,5 +1,4 @@
 #' Watermark
-#' Cori color scales
 #'
 #' This adds the CORI watermark to a gg object
 #'

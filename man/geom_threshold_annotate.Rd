@@ -16,5 +16,6 @@ geom_threshold_annotate(intercept, axis = "x", label = "", shift = 0)
 \item{shift}{Variable to shift the label by "shift" units above thresholding line along "y", or by "shift" units to the right of thresholding line along "x"}
 }
 \description{
-This is a description
+This is a utility function that allows the user to add a line threshold with text annotation using an intercept parameter.
+The shift parameter allows the user to relatively adjust the text with respect to the defined thresholding.
 }

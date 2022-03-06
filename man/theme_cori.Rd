@@ -11,5 +11,5 @@ theme_cori(base_family = "TT Hoves", base_size = 10.5)
 }
 \description{
 \code{theme_cori} provides a \link{ggplot2} theme formatted according to the
-CORI style guide for web, with sensible defaults.
+CORI style guide for static plots, with sensible defaults.
 }

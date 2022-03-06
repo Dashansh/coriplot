@@ -2,13 +2,13 @@
 % Please edit documentation in R/scale_fill_cori.R
 \name{scale_fill_cori}
 \alias{scale_fill_cori}
-\title{Cori Fill scales}
+\title{CORI Fill scales}
 \usage{
 scale_fill_cori(color = cori_primary)
 }
 \arguments{
-\item{color}{Pass a cori color palette. Deafults to \code{cori_primary} colors}
+\item{color}{Pass a named vector color palette. Defaults to \code{cori_primary} colors.}
 }
 \description{
-This is a description
+Implements color palette named vectors as the fill.
 }

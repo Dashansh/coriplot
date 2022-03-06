@@ -2,13 +2,13 @@
 % Please edit documentation in R/scale_color_cori.R
 \name{scale_color_cori}
 \alias{scale_color_cori}
-\title{Cori color scales}
+\title{CORI Color Scales}
 \usage{
 scale_color_cori(color = cori_primary)
 }
 \arguments{
-\item{color}{Pass a cori color palette. Deafults to \code{cori_primary} colors}
+\item{color}{Pass a named vector color palette. Defaults to \code{cori_primary} colors.}
 }
 \description{
-This is a description
+Implements color palette named vectors as the color scale.
 }

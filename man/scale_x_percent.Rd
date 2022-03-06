@@ -5,7 +5,7 @@
 \alias{scale_y_percent}
 \alias{scale_x_comma}
 \alias{scale_y_comma}
-\title{X & Y scales with opinionated pre-sets for percent & comma label formats}
+\title{X & Y scales with opinionated pre-set CORI Style Guideline for percent & comma label formats}
 \usage{
 scale_x_percent(
   name = waiver(),

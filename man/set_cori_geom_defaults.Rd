@@ -2,7 +2,7 @@
 % Please edit documentation in R/set_cori_geom_defaults.R
 \name{set_cori_geom_defaults}
 \alias{set_cori_geom_defaults}
-\title{The Urban Institute \link{ggplot2} theme}
+\title{The CORI \link{ggplot2} theme}
 \usage{
 set_cori_geom_defaults(base_family = "TT Hoves")
 }
@@ -11,5 +11,5 @@ set_cori_geom_defaults(base_family = "TT Hoves")
 }
 \description{
 \code{set_cori_geom_defaults} provides a \link{ggplot2} theme formatted according to the
-Urban Institute style guide, with sensible defaults.
+CORI style guide, with sensible defaults.
 }

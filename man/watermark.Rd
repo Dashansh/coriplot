@@ -2,8 +2,7 @@
 % Please edit documentation in R/watermark.R
 \name{watermark}
 \alias{watermark}
-\title{Watermark
-Cori color scales}
+\title{Watermark}
 \usage{
 watermark(alpha = 0.2)
 }
@@ -11,5 +10,5 @@ watermark(alpha = 0.2)
 \item{alpha}{Pass the opacity value for the watermark between 0 - 1 (Default: 0.5)}
 }
 \description{
-This is a description
+This adds the CORI watermark to a gg object
 }
