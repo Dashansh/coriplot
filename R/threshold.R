@@ -13,11 +13,11 @@ threshold<-function(gg, intercept,axis="x",label="", shift=0){
     cat(intercept,axis,label)
     gg <- gg +
       ggplot2::geom_vline(xintercept = intercept)+
-      ggplot2::annotate(geom = 'text',x=intercept+shift,y=Inf, label="label", color="#26535C", vjust="top")
+      ggplot2::annotate(geom = 'text',x=intercept+shift,y=Inf, label=label, color="#06BCCB", vjust="top")
   } else {
     gg <- gg +
       ggplot2::geom_hline(yintercept = intercept)+
-      ggplot2::annotate(geom = 'text',y=intercept+shift,x=Inf, label="label", color="#26535C", hjust="right")
+      ggplot2::annotate(geom = 'text',y=intercept+shift,x=Inf, label=label, color="#06BCCB", hjust="right", size = 10.5)
   }
   gg
 }
