@@ -106,16 +106,16 @@
 <span class="co"># Extract the 2021 data</span>
 <span class="va">remote_work_by_ed_level</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">date</span> <span class="op">&gt;</span> <span class="st">"2020-12-31"</span> <span class="op">&amp;</span> <span class="va">date</span> <span class="op">&lt;</span> <span class="st">"2022-01-01"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>education_level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">education_level</span><span class="op">)</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">temp</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>education_level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">education_level</span><span class="op">)</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">data2021</span>
 
-<span class="va">temp</span><span class="op">$</span><span class="va">education_level</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html" class="external-link">recode_factor</a></span><span class="op">(</span><span class="va">temp</span><span class="op">$</span><span class="va">education_level</span>,
+<span class="va">data2021</span><span class="op">$</span><span class="va">education_level</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/recode.html" class="external-link">recode_factor</a></span><span class="op">(</span><span class="va">data2021</span><span class="op">$</span><span class="va">education_level</span>,
                       bachelors_or_higher <span class="op">=</span> <span class="st">"Bachelors or higher"</span>,
                       high_school_no_college <span class="op">=</span> <span class="st">"High School and no College"</span>,
                       less_than_high_school <span class="op">=</span> <span class="st">"Less than High School"</span>,
                       some_college_or_associates <span class="op">=</span> <span class="st">"Some College or Associates"</span><span class="op">)</span>
 
 <span class="co"># For Single line chart, let's focus on Bachelors or Higher Education level</span>
-<span class="va">temp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+<span class="va">data2021</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">education_level</span> <span class="op">==</span> <span class="st">"Bachelors or higher"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span>,
         <span class="va">pct_working_remotely</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -125,39 +125,40 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0.51</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>
     title <span class="op">=</span> <span class="st">"People with Education level Bachelors or higher\nTrend of working remotely throughout 2021"</span>,
-    subtitle <span class="op">=</span> <span class="st">"Subtitle goes here. Lorem ipsum dolor sit amet\nconsectetur adipiscing elit."</span>,
+    subtitle <span class="op">=</span> <span class="st">"A single line chart example"</span>,
     caption <span class="op">=</span> <span class="st">"Source: source goes here https://www.blah.com"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"2021"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Percentage %"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="../reference/scale_color_cori.html">scale_color_cori</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="../reference/theme_cori.html">theme_cori</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-chart1-1.png" width="100%"></p>
+  <span class="fu"><a href="../reference/theme_cori.html">theme_cori</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">fig</span>
+
+<span class="va">fig</span></code></pre></div>
+<p><img src="coriplot_files/figure-html/chart1-1.png" width="100%"></p>
 </div>
 <div class="section level2">
-<h2 id="example-1">Example 1<a class="anchor" aria-label="anchor" href="#example-1"></a>
+<h2 id="multi-line-chart-example">Multi LIne Chart Example<a class="anchor" aria-label="anchor" href="#multi-line-chart-example"></a>
 </h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="va">fig</span> <span class="op">&lt;-</span> <span class="va">remote_work_by_ed_level</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
+<span class="va">data2021</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span>,
              <span class="va">pct_working_remotely</span>,
              group <span class="op">=</span> <span class="va">education_level</span>,
              color <span class="op">=</span> <span class="va">education_level</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Some Time"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"YLabel"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html" class="external-link">scale_x_date</a></span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span>  <span class="st">"%b"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"This should not exceed\nMore than two lines"</span>,
        subtitle <span class="op">=</span> <span class="st">"Some random subtitle"</span>,
        caption <span class="op">=</span> <span class="st">"This image is not mine"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html" class="external-link">scale_x_date</a></span><span class="op">(</span>date_breaks <span class="op">=</span> <span class="st">"1 month"</span>, date_labels <span class="op">=</span>  <span class="st">"%b"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="cn">NA</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Some Time"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"YLabel"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="../reference/theme_cori.html">theme_cori</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
-  <span class="fu"><a href="../reference/scale_x_percent.html">scale_y_percent</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/scale_x_percent.html">scale_y_percent</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">fig</span>
 <span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
 <span class="co">#&gt; replace the existing scale.</span>
 
 <span class="va">fig</span></code></pre></div>
-<p><img src="reference/figures/README-example1-1.png" width="100%"></p>
+<p><img src="coriplot_files/figure-html/chart2-1.png" width="100%"></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">twoColDf</span><span class="op">&lt;-</span><span class="va">time_series_sample_data</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"date"</span>,<span class="st">"less_than_high_school"</span>,<span class="st">"high_school_no_college"</span><span class="op">)</span><span class="op">]</span>
@@ -181,7 +182,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Percentage Working Remotely"</span><span class="op">)</span><span class="op">+</span>
   <span class="fu"><a href="../reference/scale_color_cori.html">scale_color_cori</a></span><span class="op">(</span><span class="va">cori_primary</span><span class="op">)</span> 
 <span class="va">fig</span> </code></pre></div>
-<p><img src="reference/figures/README-example3-1.png" width="100%"></p>
+<p><img src="coriplot_files/figure-html/example3-1.png" width="100%"></p>
 <p>This is a basic example which shows you how to make curved lines:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
@@ -205,7 +206,7 @@
 
 <span class="va">fig</span>
 <span class="co">#&gt; `geom_smooth()` using formula 'y ~ x'</span></code></pre></div>
-<p><img src="reference/figures/README-example4-1.png" width="100%"></p>
+<p><img src="coriplot_files/figure-html/example4-1.png" width="100%"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>a<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span>,b<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">2</span>,<span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span>,c<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">6</span>,<span class="fl">5</span>,<span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span><span class="op">)</span>
@@ -220,7 +221,7 @@
 <span class="fu"><a href="../reference/threshold.html">threshold</a></span><span class="op">(</span><span class="va">f</span>,<span class="fl">3.5</span>, axis<span class="op">=</span><span class="st">"x"</span>, label<span class="op">=</span><span class="st">"\nthreshold"</span>,shift<span class="op">=</span><span class="fl">0.15</span><span class="op">)</span>
 <span class="co">#&gt; 3.5 x </span>
 <span class="co">#&gt; threshold</span></code></pre></div>
-<p><img src="reference/figures/README-example5-1.png" width="100%"></p>
+<p><img src="coriplot_files/figure-html/example5-1.png" width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="new">New<a class="anchor" aria-label="anchor" href="#new"></a>
@@ -254,7 +255,7 @@
   <span class="fu"><a href="../reference/theme_cori.html">theme_cori</a></span><span class="op">(</span><span class="op">)</span>
   
 <span class="va">fig</span> </code></pre></div>
-<p><img src="reference/figures/README-example6-1.png" width="100%"></p>
+<p><img src="coriplot_files/figure-html/example6-1.png" width="100%"></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">remote_work_by_ed_level</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>
@@ -276,7 +277,7 @@
     <span class="fu"><a href="../reference/watermark.html">watermark</a></span><span class="op">(</span><span class="op">)</span><span class="op">-&gt;</span> <span class="va">fig</span>
 
 <span class="va">fig</span></code></pre></div>
-<p><img src="reference/figures/README-example7-1.png" width="100%"></p>
+<p><img src="coriplot_files/figure-html/example7-1.png" width="100%"></p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 
@@ -297,7 +298,7 @@
     <span class="fu"><a href="../reference/scale_fill_cori.html">scale_fill_cori</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">fig</span>
 
 <span class="va">fig</span></code></pre></div>
-<p><img src="reference/figures/README-example_area_plot-1.png" width="100%"></p>
+<p><img src="coriplot_files/figure-html/example_area_plot-1.png" width="100%"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
