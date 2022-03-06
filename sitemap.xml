@@ -28,6 +28,9 @@
     <loc>https://dashansh.github.io/coriplot/reference/cori_palettes.html</loc>
   </url>
   <url>
+    <loc>https://dashansh.github.io/coriplot/reference/geom_threshold_annotate.html</loc>
+  </url>
+  <url>
     <loc>https://dashansh.github.io/coriplot/reference/import_cori_font.html</loc>
   </url>
   <url>
@@ -53,9 +56,6 @@
   </url>
   <url>
     <loc>https://dashansh.github.io/coriplot/reference/theme_cori.html</loc>
-  </url>
-  <url>
-    <loc>https://dashansh.github.io/coriplot/reference/threshold.html</loc>
   </url>
   <url>
     <loc>https://dashansh.github.io/coriplot/reference/time_series_sample_data.html</loc>
