@@ -12,7 +12,7 @@
 #' @rdname urbn_palettes
 #' @export
 cori_primary <- c(
-  emerald = "#26535C",
+  `emerald` = "#00835D",
   `bright mint` = "#A3E2B5",
   `bright gold` = "#FFE473",
   `mid orange` = "#FA804A",
