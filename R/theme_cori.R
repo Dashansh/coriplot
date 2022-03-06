@@ -6,93 +6,84 @@
 #' @import extrafont
 #' @md
 #' @param base_family,base_size base font family and size
-#' @param base_line_size,base_rect_size base line and rectangle sizes
 #' @export
 
-theme_cori <- function(base_size = 8.5, base_family = "TT Hoves",
-                             base_line_size = 0.5,
-                             base_rect_size = 0.5) {
-
-  half_line <- base_size / 2L
+theme_cori <- function(base_family = "TT Hoves",
+                       base_size = 10.5) {
 
   ret <- ggplot2::theme_minimal(base_family = "TT Hoves",
                                 base_size = base_size)
 
+  # Panel Attributes
+
   ret$panel.grid.major.x = ggplot2::element_blank()
+
   ret$panel.grid.minor.x = ggplot2::element_blank()
+
   ret$panel.grid.minor.y = ggplot2::element_blank()
+
   ret$panel.grid.major.y = ggplot2::element_line(linetype = "dashed",
                                                  color = "grey")
 
   ret$panel.border = ggplot2::element_blank()
+
   ret$panel.background = ggplot2::element_blank()
 
-  ret$axis.line.x = ggplot2::element_line(color = "grey", linetype = "solid")
+  # Axis Attributes
+
+  ret$axis.title.x = ggplot2::element_text(hjust = 0,
+                                           size = 10.5,
+                                           margin = ggplot2::margin(t = 19.5, b = 4, unit = "pt"))
+
+  ret$axis.title.y = ggplot2::element_text(hjust = 1,
+                                           angle = 90,
+                                           margin = ggplot2::margin(t = 50, unit = "pt"))
+
+  ret$axis.line.x = ggplot2::element_line(color = "grey",
+                                          linetype = "solid")
+
+  ret$axis.text.x = ggplot2::element_text(size = 10.5,
+                                          hjust = 0.5)
+
+  ret$axis.text.y = ggplot2::element_text(size = 10.5,
+                                          hjust = 1,
+                                          margin = ggplot2::margin(l = 4, r = 6, unit = "pt"))
 
   # Plot Attributes
 
-  # plot.tag = ggplot2::element_text(size = base_size * 1.5,
-  #                                  hjust = 0L,
-  #                                  vjust = 0L,
-  #                                  face = "bold",
-  #                                  margin = ggplot2::margin(b = 10L)),
-  # plot.tag.position = "topleft",
-  #
-  ret$plot.title = ggplot2::element_text(size = 24,
-                                         hjust = 0L,
-                                         vjust = 0L,
+  ret$plot.title = ggplot2::element_text(size = 18,
+                                         hjust = 0,
                                          face = "bold",
-                                         margin = ggplot2::margin(b = 10L))
-  # ret$plot.title.position = "plot"
+                                         color = "#121E22",
+                                         lineheight = 1.2,
+                                         margin = ggplot2::margin(t = 18, b = 11.25, unit = "pt"))
 
-  ret$plot.subtitle = ggplot2::element_text(size = 14,
+  # Smarth we need to work on the font weight over here.
+  # We need TT Hoves regular here, while for title we will use the bold font
+  # Do we need to change the lineheight
+  ret$plot.subtitle = ggplot2::element_text(size = 12,
                                         hjust = 0L,
-                                        vjust = 0L,
-                                        margin = ggplot2::margin(b = 10L))
+                                        lineheight = 1.5,
+                                        margin = ggplot2::margin(b = 32.5, unit = "pt"))
 
-  ret$plot.caption = ggplot2::element_text(size = base_size * 7 / 8.5,
+  ret$plot.caption = ggplot2::element_text(size = 9,
                                        hjust = 0)
-
-  ret$axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 20, b = 10),
-                                           hjust = 0)
-
-  ret$axis.title.y = ggplot2::element_text(vjust = 1, angle = 90)
-
-  # margin = ggplot2::margin(t = half_line * 0.9)
 
   # legend attributes
 
-  # legend.background = ggplot2::element_blank(),
-
-  # ret$legend.spacing = NULL
-  # legend.spacing.x = ggplot2::unit(4L, "pt"),
-  # legend.spacing.y = NULL,
-  #
-  # ret$legend.key = ggplot2::element_blank()
-  # ret$legend.key.size = ggplot2::unit(0L, "pt")
-  # legend.key.height = NULL,
-  # legend.key.width = NULL,
-  #
-  # legend.text = ggplot2::element_text(size = base_size * 9.5 / 8.5,
-  #                                     vjust = 0.5),
-  # ret$legend.text.align = 0
   ret$legend.title = ggplot2::element_blank()
-  # ret$legend.title.align = 0
-  #
-
-  # ret$legend.background = element_blank()
-  # ret$legend.box.background = element_rect(colour = "black")
 
   ret$legend.position = "bottom"
-  ret$legend.direction = "horizontal"
-  ret$legend.justification = c(0,0)
-  # ret$legend.margin = ggplot2::margin(6L,0L,6L,0L, "pt")
 
-  ret$legend.box = "horizontal"
+  ret$legend.justification = c(-0.015,0)
+
+  ret$legend.margin = ggplot2::margin(b = 10,
+                                      unit = "pt")
+
   ret$legend.box.just = "left"
-  # legend.box.margin = NULL,
-  # legend.box.background = NULL,
-  # ret$legend.box.spacing = NULL
+
+  ret$legend.text = ggplot2::element_text(size = 10.5,
+                                          margin = ggplot2::margin(r = 25, unit = "pt"))
 
   ret
 }
