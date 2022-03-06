@@ -25,6 +25,9 @@
     <loc>https://dashansh.github.io/coriplot/reference/cori_network_communities.html</loc>
   </url>
   <url>
+    <loc>https://dashansh.github.io/coriplot/reference/flush_ticks.html</loc>
+  </url>
+  <url>
     <loc>https://dashansh.github.io/coriplot/reference/import_cori_font.html</loc>
   </url>
   <url>
@@ -40,7 +43,16 @@
     <loc>https://dashansh.github.io/coriplot/reference/scale_color_cori.html</loc>
   </url>
   <url>
+    <loc>https://dashansh.github.io/coriplot/reference/scale_x_percent.html</loc>
+  </url>
+  <url>
+    <loc>https://dashansh.github.io/coriplot/reference/set_cori_geom_defaults.html</loc>
+  </url>
+  <url>
     <loc>https://dashansh.github.io/coriplot/reference/theme_cori.html</loc>
+  </url>
+  <url>
+    <loc>https://dashansh.github.io/coriplot/reference/threshold.html</loc>
   </url>
   <url>
     <loc>https://dashansh.github.io/coriplot/reference/time_series_sample_data.html</loc>
