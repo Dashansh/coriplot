@@ -29,6 +29,7 @@ library(tidyr)
 This applied the theme designed specifically for CORI and sets the defaults
 ```{r set_theme}
 theme_set(theme_cori())
+set_cori_geom_defaults()
 
 ```
 
@@ -46,8 +47,8 @@ remote_work_by_ed_level %>%
           pct_working_remotely,
           group = education_level,
           color = education_level)) +
-    geom_line(lwd = 1.5) +
-    geom_point(size = 2) +
+    geom_line() +
+    geom_point() +
     scale_x_date(date_breaks = "1 month", date_labels =  "%b") +
     labs(
       title = "Title of the chart goes here.\nAvoid more than two lines",
